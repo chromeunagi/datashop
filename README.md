@@ -1,2 +1,2 @@
 # datashop
-datashop is a end-to-end encrypted file store
+datashop is an end-to-end encrypted file store

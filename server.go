@@ -26,11 +26,19 @@ func logoutHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func accountHandler(w http.ResponseWriter, r *http.Request) {
+	if !userLoggedIn() {
+		// TODO send 401 (unauthorized)
+		return
+	}
 	fmt.Printf("account page hit\n")
 }
 
 func userLoggedIn() bool {
 	return false
+}
+
+func generateToken() string {
+	return "token"
 }
 
 func main() {
