@@ -1,11 +1,8 @@
 package main
 
 import (
-	"crypto/sha256"
 	"fmt"
 	"net/http"
-	"strconv"
-	"time"
 )
 
 const (
@@ -47,13 +44,6 @@ func accountHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	fmt.Printf("account page hit\n")
-}
-
-func generateSessionToken(r *http.Request) string {
-	t := strconv.Itoa(int(time.Now().Unix()))
-	s := r.Header.Get("USER") + t
-	b := sha256.Sum256([]byte(s))
-	return fmt.Sprintf("%x", string(b[:]))
 }
 
 func init() {
