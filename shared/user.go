@@ -11,10 +11,14 @@ type User struct {
 }
 
 func isUserLoggedIn(r *http.Request) bool {
-	stored, ok := TokenStore.getSessionToken(r)
+	/*
+	stored, ok := getSessionToken(r)
 	if !ok {
 		return false
 	}
 
 	return stored == r.Header.Get("Session-Token")
+	*/
+
+	return false
 }
